@@ -7,70 +7,197 @@
 <title>Perfect Academy Zirapur</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
-body{background:#0f172a;color:white}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+/* HEADINGS CENTER */
+h1,h2,h3{
+text-align:center;
+margin-bottom:20px;
+}
 
 /* HEADER */
 header{
-position:fixed;width:100%;top:0;
-display:flex;justify-content:space-between;
-padding:15px;background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px)
+position:fixed;
+width:100%;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
-nav a{margin:0 10px;color:white;text-decoration:none}
-.btn{background:#3b82f6;padding:10px 15px;border-radius:8px}
+
+nav a{
+margin:0 10px;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#3b82f6;
+}
+
+.btn{
+background:#3b82f6;
+padding:10px 18px;
+border-radius:8px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#2563eb;
+transform:scale(1.05);
+}
 
 /* HERO */
 .hero{
 height:100vh;
-display:flex;flex-direction:column;
-justify-content:center;align-items:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 background:linear-gradient(135deg,#1e3a8a,#2563eb);
-text-align:center
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+margin:10px 0;
 }
 
 /* SECTION */
-section{padding:60px 20px}
+section{
+padding:80px 20px;
+}
 
-/* CARDS */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px
+gap:20px;
 }
+
+/* CARD */
 .card{
 background:rgba(255,255,255,0.1);
-padding:20px;border-radius:20px;
-backdrop-filter:blur(15px)
+padding:20px;
+border-radius:20px;
+backdrop-filter:blur(15px);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,0.2);
 }
 
 /* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:10px
+gap:10px;
 }
-.gallery img{width:100%;border-radius:10px}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+}
 
 /* VIDEO */
-.video iframe{width:100%;height:250px;border-radius:10px}
+.video iframe{
+width:100%;
+height:250px;
+border-radius:10px;
+}
 
 /* CONTACT */
-input,textarea{width:80%;padding:10px;margin:5px;border-radius:5px;border:none}
+form{
+text-align:center;
+}
+
+input,textarea{
+width:80%;
+padding:12px;
+margin:8px;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#3b82f6;
+color:white;
+cursor:pointer;
+}
 
 /* FOOTER */
-footer{text-align:center;padding:20px;background:#020617}
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+}
 
 /* FLOAT */
 .whatsapp,.instagram{
-position:fixed;right:20px;padding:15px;border-radius:50%;
-color:white
+position:fixed;
+right:20px;
+padding:15px;
+border-radius:50%;
+color:white;
+font-weight:bold;
 }
-.whatsapp{bottom:20px;background:#25D366}
-.instagram{bottom:80px;background:linear-gradient(45deg,#f09433,#dc2743)}
+
+.whatsapp{
+bottom:20px;
+background:#25D366;
+}
+
+.instagram{
+bottom:80px;
+background:linear-gradient(45deg,#f09433,#dc2743);
+}
+
+/* SCROLL ANIMATION */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
 
 </style>
 </head>
@@ -81,12 +208,11 @@ color:white
 <h3>Perfect Academy</h3>
 <nav>
 <a href="#">Home</a>
-<a href="#about">About</a>
 <a href="#courses">Courses</a>
 <a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
 </nav>
-<a href="#contact" class="btn">Book Your Seat</a>
+<a href="#contact" class="btn">Book Seat</a>
 </header>
 
 <section class="hero">
@@ -95,14 +221,8 @@ color:white
 <a href="#contact" class="btn">Join Now</a>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-<h2>About Perfect Academy</h2>
-<p>Perfect Academy Zirapur is a leading computer training institute offering DCA, PGDCA, CPCT and modern AI courses with expert guidance.</p>
-</section>
-
 <!-- COURSES -->
-<section id="courses">
+<section id="courses" class="fade">
 <h2>Our Courses</h2>
 <div class="grid">
 <div class="card">DCA - ₹11,000</div>
@@ -113,8 +233,8 @@ color:white
 </div>
 </section>
 
-<!-- HAPPY CUSTOMERS -->
-<section>
+<!-- STUDENTS -->
+<section class="fade">
 <h2>Happy Students</h2>
 <div class="grid">
 <div class="card">⭐⭐⭐⭐⭐ Best Institute!</div>
@@ -124,7 +244,7 @@ color:white
 </section>
 
 <!-- VIDEO -->
-<section>
+<section class="fade">
 <h2>Instagram Reels</h2>
 <div class="grid video">
 <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
@@ -135,7 +255,7 @@ color:white
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
+<section id="gallery" class="fade">
 <h2>Gallery</h2>
 <div class="gallery">
 <img src="https://source.unsplash.com/300x300/?classroom">
@@ -144,21 +264,17 @@ color:white
 <img src="https://source.unsplash.com/300x300/?education">
 <img src="https://source.unsplash.com/300x300/?training">
 <img src="https://source.unsplash.com/300x300/?lab">
-<img src="https://source.unsplash.com/300x300/?teaching">
-<img src="https://source.unsplash.com/300x300/?college">
-<img src="https://source.unsplash.com/300x300/?learning">
-<img src="https://source.unsplash.com/300x300/?study">
 </div>
 </section>
 
 <!-- MAP -->
-<section>
+<section class="fade">
 <h2>Our Location</h2>
 <iframe src="https://maps.google.com/maps?q=zirapur&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300"></iframe>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="fade">
 <h2>Contact Us</h2>
 <form onsubmit="sendData(); return false;">
 <input id="name" placeholder="Name">
@@ -169,18 +285,13 @@ color:white
 <p>📞 +91 74151 46049</p>
 </section>
 
-<!-- PRIVACY -->
-<section>
-<h2>Privacy Policy</h2>
-<p>Your data is सुरक्षित and used only for admission purpose.</p>
+<!-- ABOUT (NOW BOTTOM) -->
+<section class="fade">
+<h2>About Perfect Academy</h2>
+<p>Perfect Academy Zirapur is a leading computer training institute offering DCA, PGDCA, CPCT and modern AI courses.</p>
 </section>
 
-<!-- TERMS -->
-<section>
-<h2>Terms & Conditions</h2>
-<p>All course fees are non-refundable. Institute rules must be followed.</p>
-</section>
-
+<!-- FOOTER -->
 <footer>
 <p>© 2026 Perfect Academy Zirapur</p>
 </footer>
@@ -188,15 +299,26 @@ color:white
 <a href="https://wa.me/917415146049" class="whatsapp">W</a>
 <a href="https://instagram.com/perfectacademy1978" class="instagram">I</a>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init();
 
 function sendData(){
 let name=document.getElementById("name").value;
 let phone=document.getElementById("phone").value;
 window.open("https://wa.me/917415146049?text=Name:"+name+" Phone:"+phone);
 }
+
+/* SCROLL ANIMATION */
+let elements=document.querySelectorAll(".fade");
+
+window.addEventListener("scroll",()=>{
+elements.forEach(el=>{
+let top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+el.classList.add("show");
+}
+});
+});
+
 </script>
 
 </body>
