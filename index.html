@@ -17,7 +17,7 @@ body{background:#0f172a;color:white}
 header{
 position:fixed;width:100%;top:0;
 display:flex;justify-content:space-between;
-padding:20px;background:rgba(255,255,255,0.05);
+padding:15px;background:rgba(255,255,255,0.05);
 backdrop-filter:blur(10px)
 }
 nav a{margin:0 10px;color:white;text-decoration:none}
@@ -28,15 +28,15 @@ nav a{margin:0 10px;color:white;text-decoration:none}
 height:100vh;
 display:flex;flex-direction:column;
 justify-content:center;align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#1e3a8a,#2563eb)
+background:linear-gradient(135deg,#1e3a8a,#2563eb);
+text-align:center
 }
-.hero h1{font-size:50px}
-.hero p{margin:10px 0}
 
-/* COURSES */
-.courses{
-padding:80px 20px;
+/* SECTION */
+section{padding:60px 20px}
+
+/* CARDS */
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px
@@ -44,41 +44,33 @@ gap:20px
 .card{
 background:rgba(255,255,255,0.1);
 padding:20px;border-radius:20px;
-backdrop-filter:blur(15px);
-transition:0.3s
+backdrop-filter:blur(15px)
 }
-.card:hover{transform:translateY(-10px)}
 
 /* GALLERY */
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:10px;padding:20px
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px
 }
-.gallery img{
-width:100%;border-radius:10px;
-transition:0.3s
-}
-.gallery img:hover{transform:scale(1.05)}
+.gallery img{width:100%;border-radius:10px}
+
+/* VIDEO */
+.video iframe{width:100%;height:250px;border-radius:10px}
 
 /* CONTACT */
-.contact{
-padding:50px;text-align:center
-}
-input,textarea{
-width:80%;padding:10px;margin:5px;border-radius:5px;border:none
-}
-
-/* FLOAT BUTTONS */
-.whatsapp,.instagram{
-position:fixed;right:20px;padding:15px;border-radius:50%;
-color:white;font-size:20px
-}
-.whatsapp{bottom:20px;background:#25D366}
-.instagram{bottom:80px;background:linear-gradient(45deg,#f09433,#dc2743)}
+input,textarea{width:80%;padding:10px;margin:5px;border-radius:5px;border:none}
 
 /* FOOTER */
 footer{text-align:center;padding:20px;background:#020617}
+
+/* FLOAT */
+.whatsapp,.instagram{
+position:fixed;right:20px;padding:15px;border-radius:50%;
+color:white
+}
+.whatsapp{bottom:20px;background:#25D366}
+.instagram{bottom:80px;background:linear-gradient(45deg,#f09433,#dc2743)}
 
 </style>
 </head>
@@ -86,37 +78,87 @@ footer{text-align:center;padding:20px;background:#020617}
 <body>
 
 <header>
-<h2>Perfect Academy</h2>
+<h3>Perfect Academy</h3>
 <nav>
 <a href="#">Home</a>
+<a href="#about">About</a>
 <a href="#courses">Courses</a>
+<a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
 </nav>
-<a href="#contact" class="btn">Join Now</a>
+<a href="#contact" class="btn">Book Your Seat</a>
 </header>
 
 <section class="hero">
 <h1>Perfect Academy Zirapur</h1>
 <p>Best Computer Institute for Your Bright Future</p>
-<a href="#contact" class="btn">Start Now</a>
+<a href="#contact" class="btn">Join Now</a>
 </section>
 
-<section id="courses" class="courses">
-<div class="card" data-aos="fade-up">DCA - ₹11,000</div>
-<div class="card" data-aos="fade-up">PGDCA - ₹12,000</div>
-<div class="card" data-aos="fade-up">CPCT - ₹9,000</div>
-<div class="card" data-aos="fade-up">Basic - ₹1500</div>
-<div class="card" data-aos="fade-up">AI Class - ₹3000</div>
+<!-- ABOUT -->
+<section id="about">
+<h2>About Perfect Academy</h2>
+<p>Perfect Academy Zirapur is a leading computer training institute offering DCA, PGDCA, CPCT and modern AI courses with expert guidance.</p>
 </section>
 
-<section class="gallery">
-<img src="https://images.unsplash.com/photo-1581091870627-3c1f7d36b3d3">
-<img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc">
-<img src="https://images.unsplash.com/photo-1584697964403-5a5a0c8b0e6e">
-<img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+<!-- COURSES -->
+<section id="courses">
+<h2>Our Courses</h2>
+<div class="grid">
+<div class="card">DCA - ₹11,000</div>
+<div class="card">PGDCA - ₹12,000</div>
+<div class="card">CPCT - ₹9,000</div>
+<div class="card">Basic - ₹1500</div>
+<div class="card">AI Class - ₹3000</div>
+</div>
 </section>
 
-<section id="contact" class="contact">
+<!-- HAPPY CUSTOMERS -->
+<section>
+<h2>Happy Students</h2>
+<div class="grid">
+<div class="card">⭐⭐⭐⭐⭐ Best Institute!</div>
+<div class="card">⭐⭐⭐⭐ Great Teaching</div>
+<div class="card">⭐⭐⭐⭐⭐ Good Environment</div>
+</div>
+</section>
+
+<!-- VIDEO -->
+<section>
+<h2>Instagram Reels</h2>
+<div class="grid video">
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="https://source.unsplash.com/300x300/?classroom">
+<img src="https://source.unsplash.com/300x300/?computer">
+<img src="https://source.unsplash.com/300x300/?students">
+<img src="https://source.unsplash.com/300x300/?education">
+<img src="https://source.unsplash.com/300x300/?training">
+<img src="https://source.unsplash.com/300x300/?lab">
+<img src="https://source.unsplash.com/300x300/?teaching">
+<img src="https://source.unsplash.com/300x300/?college">
+<img src="https://source.unsplash.com/300x300/?learning">
+<img src="https://source.unsplash.com/300x300/?study">
+</div>
+</section>
+
+<!-- MAP -->
+<section>
+<h2>Our Location</h2>
+<iframe src="https://maps.google.com/maps?q=zirapur&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300"></iframe>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
 <h2>Contact Us</h2>
 <form onsubmit="sendData(); return false;">
 <input id="name" placeholder="Name">
@@ -124,17 +166,29 @@ footer{text-align:center;padding:20px;background:#020617}
 <textarea id="msg" placeholder="Message"></textarea>
 <button>Submit</button>
 </form>
+<p>📞 +91 74151 46049</p>
 </section>
 
-<a href="https://wa.me/917415146049" class="whatsapp">W</a>
-<a href="https://instagram.com/perfectacademy1978" class="instagram">I</a>
+<!-- PRIVACY -->
+<section>
+<h2>Privacy Policy</h2>
+<p>Your data is सुरक्षित and used only for admission purpose.</p>
+</section>
+
+<!-- TERMS -->
+<section>
+<h2>Terms & Conditions</h2>
+<p>All course fees are non-refundable. Institute rules must be followed.</p>
+</section>
 
 <footer>
 <p>© 2026 Perfect Academy Zirapur</p>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<a href="https://wa.me/917415146049" class="whatsapp">W</a>
+<a href="https://instagram.com/perfectacademy1978" class="instagram">I</a>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 AOS.init();
 
