@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Perfect Academy Zirapur | Best Computer Institute</title>
+
+<meta name="description" content="Best computer institute in Zirapur for DCA, PGDCA, CPCT & AI Courses.">
+<meta name="keywords" content="Computer Institute Zirapur, DCA, PGDCA, CPCT, AI Course">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+body{margin:0;font-family:-apple-system;background:#f5f9ff}
+header{position:sticky;top:0;background:#fff;display:flex;justify-content:space-between;padding:15px 20px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+nav a{margin:0 10px;text-decoration:none;color:#333}
+.btn{background:#007bff;color:#fff;padding:10px 15px;border-radius:5px}
+.hero{text-align:center;padding:100px;background:linear-gradient(135deg,#007bff,#00d4ff);color:#fff}
+.cards{display:flex;flex-wrap:wrap;justify-content:center}
+.card{background:rgba(255,255,255,0.7);margin:10px;padding:20px;width:220px;border-radius:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);backdrop-filter:blur(10px);transition:0.3s}
+.card:hover{transform:translateY(-10px)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px}
+.gallery img{width:100%;border-radius:10px}
+.cta{text-align:center;padding:60px;background:#007bff;color:#fff}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:green;color:#fff;padding:15px;border-radius:50%}
+.instagram{position:fixed;bottom:80px;right:20px;background:linear-gradient(45deg,#f09433,#dc2743);color:#fff;padding:15px;border-radius:50%}
+.call-btn{position:fixed;bottom:140px;right:20px;background:#007bff;color:#fff;padding:15px;border-radius:50%}
+footer{text-align:center;padding:20px;background:#111;color:#fff}
+input,textarea{width:90%;padding:10px;margin:5px}
+</style>
+</head>
+
+<body>
+
+<header>
+<div><b>Perfect Academy Zirapur</b></div>
+<nav>
+<a href="#">Home</a>
+<a href="#courses">Courses</a>
+<a href="#contact">Contact</a>
+</nav>
+<a href="#contact" class="btn">Book Seat</a>
+</header>
+
+<section class="hero">
+<h1 id="title">Perfect Academy Zirapur</h1>
+<p>Best Computer Institute for Your Bright Future</p>
+<a href="#contact" class="btn">Apply Now</a>
+</section>
+
+<section id="courses">
+<h2 align="center">Our Courses</h2>
+<div class="cards">
+<div class="card" data-aos="fade-up">DCA - ₹11,000</div>
+<div class="card" data-aos="fade-up">PGDCA - ₹12,000</div>
+<div class="card" data-aos="fade-up">CPCT - ₹9,000</div>
+<div class="card" data-aos="fade-up">Basic - ₹1500</div>
+<div class="card" data-aos="fade-up">AI Class - ₹3000</div>
+</div>
+</section>
+
+<section>
+<h2 align="center">Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1581091870627-3c1f7d36b3d3">
+<img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc">
+<img src="https://images.unsplash.com/photo-1584697964403-5a5a0c8b0e6e">
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+</div>
+</section>
+
+<section class="cta">
+<h2>Start Your Career Today!</h2>
+<a href="#contact" class="btn">Apply Now</a>
+</section>
+
+<section id="contact">
+<h2 align="center">Contact</h2>
+
+<form onsubmit="sendData(); return false;">
+<input id="name" placeholder="Name" required>
+<input id="phone" placeholder="Phone" required>
+<textarea id="msg" placeholder="Message"></textarea>
+<button type="submit">Submit</button>
+</form>
+
+<p align="center">📞 +91 74151 46049</p>
+</section>
+
+<a href="tel:7415146049" class="call-btn">📞</a>
+<a href="https://wa.me/917415146049" class="whatsapp">W</a>
+<a href="https://instagram.com/perfectacademy1978" class="instagram">I</a>
+
+<footer>
+<p>© 2026 Perfect Academy Zirapur</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init();
+gsap.from("#title",{y:-50,opacity:0,duration:1});
+
+function sendData(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+
+window.open("https://wa.me/917415146049?text=Name:"+name+" Phone:"+phone);
+alert("Form Submitted!");
+}
+</script>
+
+</body>
+</html>
