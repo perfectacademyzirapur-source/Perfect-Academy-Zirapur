@@ -205,19 +205,31 @@ transform:translateY(0);
 <body>
 
 <!-- LOGIN PAGE -->
-<div id="loginPage" style="text-align:center; padding:100px;">
+<body>
+
+<!-- STUDENT LOGIN -->
+<div id="studentLogin" style="text-align:center; padding:100px;">
+<h2>Student Login</h2>
+<input id="phone" placeholder="Enter Mobile Number"><br><br>
+<button onclick="studentLogin()">Login</button>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div id="adminLogin" style="text-align:center; padding:100px;">
 <h2>Admin Login</h2>
 <input id="user" placeholder="Username"><br><br>
 <input id="pass" type="password" placeholder="Password"><br><br>
-<button onclick="login()">Login</button>
+<button onclick="adminLogin()">Login</button>
 </div>
 
+<!-- ADMIN PANEL -->
 <div id="adminPanel" style="display:none; padding:50px;">
 <h2>Admin Panel</h2>
 <p>Welcome Admin ✅</p>
 <button onclick="logout()">Logout</button>
 </div>
 
+<!-- MAIN WEBSITE -->
 <div id="mainSite" style="display:none;">
 
 <header>
@@ -319,16 +331,31 @@ transform:translateY(0);
 
 <script>
 
-function login(){
+function studentLogin(){
+let phone=document.getElementById("phone").value;
+
+let users = ["9876543210","7415146049"];
+
+if(users.includes(phone)){
+document.getElementById("studentLogin").style.display="none";
+document.getElementById("adminLogin").style.display="none";
+document.getElementById("mainSite").style.display="block";
+}else{
+alert("Number not registered ❌");
+}
+}
+
+function adminLogin(){
 let u=document.getElementById("user").value;
 let p=document.getElementById("pass").value;
 
 if(u=="admin" && p=="1234"){
-document.getElementById("loginPage").style.display="none";
+document.getElementById("studentLogin").style.display="none";
+document.getElementById("adminLogin").style.display="none";
 document.getElementById("adminPanel").style.display="block";
 document.getElementById("mainSite").style.display="block";
 }else{
-alert("Wrong Login");
+alert("Wrong Admin Login ❌");
 }
 }
 
