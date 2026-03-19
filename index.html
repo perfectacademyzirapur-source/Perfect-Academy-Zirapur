@@ -204,29 +204,6 @@ transform:translateY(0);
 
 <body>
 
-<!-- LOGIN PAGE -->
-<body>
-
-<!-- SIGNUP -->
-<div id="signupPage" style="text-align:center; padding:100px;">
-<h2>Signup</h2>
-<input id="newUser" placeholder="Create Username"><br><br>
-<input id="newPass" type="password" placeholder="Create Password"><br><br>
-<button onclick="signup()">Signup</button>
-<p>Already have account? <a href="#" onclick="showLogin()">Login</a></p>
-</div>
-
-<!-- LOGIN -->
-<div id="loginPage" style="display:none; text-align:center; padding:100px;">
-<h2>Login</h2>
-<input id="loginUser" placeholder="Username"><br><br>
-<input id="loginPass" type="password" placeholder="Password"><br><br>
-<button onclick="login()">Login</button>
-<p>No account? <a href="#" onclick="showSignup()">Signup</a></p>
-</div>
-
-<!-- MAIN SITE -->
-<div id="mainSite" style="display:none;">
 
 <header>
 <h3>Perfect Academy</h3>
@@ -326,42 +303,6 @@ transform:translateY(0);
 <a href="https://instagram.com/perfectacademy1978" class="instagram">I</a>
 
 <script>
-
-function signup(){
-let user=document.getElementById("newUser").value;
-let pass=document.getElementById("newPass").value;
-
-localStorage.setItem("user", user);
-localStorage.setItem("pass", pass);
-
-alert("Signup Success ✅");
-showLogin();
-}
-
-function login(){
-let user=document.getElementById("loginUser").value;
-let pass=document.getElementById("loginPass").value;
-
-let savedUser=localStorage.getItem("user");
-let savedPass=localStorage.getItem("pass");
-
-if(user===savedUser && pass===savedPass){
-document.getElementById("loginPage").style.display="none";
-document.getElementById("mainSite").style.display="block";
-}else{
-alert("Wrong Login ❌");
-}
-}
-
-function showLogin(){
-document.getElementById("signupPage").style.display="none";
-document.getElementById("loginPage").style.display="block";
-}
-
-function showSignup(){
-document.getElementById("signupPage").style.display="block";
-document.getElementById("loginPage").style.display="none";
-}
 
 function sendData(){
 let name=document.getElementById("name").value;
