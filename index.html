@@ -204,6 +204,22 @@ transform:translateY(0);
 
 <body>
 
+<!-- LOGIN PAGE -->
+<div id="loginPage" style="text-align:center; padding:100px;">
+<h2>Admin Login</h2>
+<input id="user" placeholder="Username"><br><br>
+<input id="pass" type="password" placeholder="Password"><br><br>
+<button onclick="login()">Login</button>
+</div>
+
+<div id="adminPanel" style="display:none; padding:50px;">
+<h2>Admin Panel</h2>
+<p>Welcome Admin ✅</p>
+<button onclick="logout()">Logout</button>
+</div>
+
+<div id="mainSite" style="display:none;">
+
 <header>
 <h3>Perfect Academy</h3>
 <nav>
@@ -296,10 +312,29 @@ transform:translateY(0);
 <p>© 2026 Perfect Academy Zirapur</p>
 </footer>
 
+</div>
+
 <a href="https://wa.me/917415146049" class="whatsapp">W</a>
 <a href="https://instagram.com/perfectacademy1978" class="instagram">I</a>
 
 <script>
+
+function login(){
+let u=document.getElementById("user").value;
+let p=document.getElementById("pass").value;
+
+if(u=="admin" && p=="1234"){
+document.getElementById("loginPage").style.display="none";
+document.getElementById("adminPanel").style.display="block";
+document.getElementById("mainSite").style.display="block";
+}else{
+alert("Wrong Login");
+}
+}
+
+function logout(){
+location.reload();
+}
 
 function sendData(){
 let name=document.getElementById("name").value;
