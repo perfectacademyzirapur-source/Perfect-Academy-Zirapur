@@ -207,29 +207,25 @@ transform:translateY(0);
 <!-- LOGIN PAGE -->
 <body>
 
-<!-- STUDENT LOGIN -->
-<div id="studentLogin" style="text-align:center; padding:100px;">
-<h2>Student Login</h2>
-<input id="phone" placeholder="Enter Mobile Number"><br><br>
-<button onclick="studentLogin()">Login</button>
+<!-- SIGNUP -->
+<div id="signupPage" style="text-align:center; padding:100px;">
+<h2>Signup</h2>
+<input id="newUser" placeholder="Create Username"><br><br>
+<input id="newPass" type="password" placeholder="Create Password"><br><br>
+<button onclick="signup()">Signup</button>
+<p>Already have account? <a href="#" onclick="showLogin()">Login</a></p>
 </div>
 
-<!-- ADMIN LOGIN -->
-<div id="adminLogin" style="text-align:center; padding:100px;">
-<h2>Admin Login</h2>
-<input id="user" placeholder="Username"><br><br>
-<input id="pass" type="password" placeholder="Password"><br><br>
-<button onclick="adminLogin()">Login</button>
+<!-- LOGIN -->
+<div id="loginPage" style="display:none; text-align:center; padding:100px;">
+<h2>Login</h2>
+<input id="loginUser" placeholder="Username"><br><br>
+<input id="loginPass" type="password" placeholder="Password"><br><br>
+<button onclick="login()">Login</button>
+<p>No account? <a href="#" onclick="showSignup()">Signup</a></p>
 </div>
 
-<!-- ADMIN PANEL -->
-<div id="adminPanel" style="display:none; padding:50px;">
-<h2>Admin Panel</h2>
-<p>Welcome Admin ✅</p>
-<button onclick="logout()">Logout</button>
-</div>
-
-<!-- MAIN WEBSITE -->
+<!-- MAIN SITE -->
 <div id="mainSite" style="display:none;">
 
 <header>
@@ -331,36 +327,40 @@ transform:translateY(0);
 
 <script>
 
-function studentLogin(){
-let phone=document.getElementById("phone").value;
+function signup(){
+let user=document.getElementById("newUser").value;
+let pass=document.getElementById("newPass").value;
 
-let users = ["9876543210","7415146049"];
+localStorage.setItem("user", user);
+localStorage.setItem("pass", pass);
 
-if(users.includes(phone)){
-document.getElementById("studentLogin").style.display="none";
-document.getElementById("adminLogin").style.display="none";
+alert("Signup Success ✅");
+showLogin();
+}
+
+function login(){
+let user=document.getElementById("loginUser").value;
+let pass=document.getElementById("loginPass").value;
+
+let savedUser=localStorage.getItem("user");
+let savedPass=localStorage.getItem("pass");
+
+if(user===savedUser && pass===savedPass){
+document.getElementById("loginPage").style.display="none";
 document.getElementById("mainSite").style.display="block";
 }else{
-alert("Number not registered ❌");
+alert("Wrong Login ❌");
 }
 }
 
-function adminLogin(){
-let u=document.getElementById("user").value;
-let p=document.getElementById("pass").value;
-
-if(u=="admin" && p=="1234"){
-document.getElementById("studentLogin").style.display="none";
-document.getElementById("adminLogin").style.display="none";
-document.getElementById("adminPanel").style.display="block";
-document.getElementById("mainSite").style.display="block";
-}else{
-alert("Wrong Admin Login ❌");
-}
+function showLogin(){
+document.getElementById("signupPage").style.display="none";
+document.getElementById("loginPage").style.display="block";
 }
 
-function logout(){
-location.reload();
+function showSignup(){
+document.getElementById("signupPage").style.display="block";
+document.getElementById("loginPage").style.display="none";
 }
 
 function sendData(){
