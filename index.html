@@ -299,6 +299,14 @@ background: linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 transform: scale(1.1);
 }
 
+/* FINAL 16:9 FIX (FORCE) */
+#gallery .video img {
+width: 240px !important;
+height: 135px !important;   /* 16:9 ratio (240 ÷ 16 × 9 = 135) */
+object-fit: cover !important;
+border-radius: 12px;
+}
+
 </style>
 </head>
 
