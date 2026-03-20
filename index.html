@@ -253,21 +253,24 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* FORCE FIX - GALLERY SIZE CONTROL */
-#gallery .gallery {
-display: grid !important;
-grid-template-columns: repeat(4, 1fr) !important;
+/* FINAL SMALL GALLERY FIX */
+#gallery .video {
+display: flex;
+justify-content: center;
 gap: 15px;
-max-width: 900px;
-margin: auto;
+flex-wrap: wrap;
 }
 
-#gallery .gallery img {
-width: 100% !important;
-height: 160px !important;
-object-fit: cover !important;
-border-radius: 12px;
+#gallery .video img {
+width: 150px;
+height: 120px;
+object-fit: cover;
+border-radius: 10px;
+transition: 0.3s;
 }
+
+#gallery .video img:hover {
+transform: scale(1.05);
 
 </style>
 </head>
@@ -345,7 +348,7 @@ border-radius: 12px;
 <img src="photo1.jpg" onclick="openImg(this)">
 <img src="photo2.JPG" onclick="openImg(this)">
 <img src="photo3.jpg" onclick="openImg(this)">
-<img src="photo4.HEIC" onclick="openImg(this)">
+<img src="photo4.jpg" onclick="openImg(this)">
 
 </div>
 
