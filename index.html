@@ -270,6 +270,35 @@ transition: 0.3s;
 #gallery .video img:hover {
 transform: scale(1.05);
 
+.whatsapp, .instagram {
+position: fixed;
+right: 20px;
+width: 55px;
+height: 55px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+color: white;
+font-size: 26px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+z-index: 999;
+}
+
+.whatsapp {
+bottom: 20px;
+background: #25D366;
+}
+
+.instagram {
+bottom: 90px;
+background: linear-gradient(45deg,#f09433,#dc2743,#bc1888);
+}
+
+.whatsapp:hover, .instagram:hover {
+transform: scale(1.1);
+}
+
 </style>
 </head>
 
@@ -403,8 +432,13 @@ All course fees are non-refundable. Students must follow institute rules and mai
 
 </div>
 
-<a href="https://wa.me/917415146049" class="whatsapp">W</a>
-<a href="https://instagram.com/perfectacademy1978" class="instagram">I</a>
+<a href="https://wa.me/917415146049" class="whatsapp" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="https://instagram.com/perfectacademy1978" class="instagram" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
 
 <script>
 
