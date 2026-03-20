@@ -153,6 +153,17 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
+
+/* Images */
+
+.poster-gallery img{
+width:100%;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+cursor:pointer;
+}
+
 /* INPUT */
 input,textarea{
 width:80%;
@@ -270,17 +281,21 @@ transform:translateY(0);
 <!-- Instagram Script (ONLY ONCE) -->
 <script async src="https://www.instagram.com/embed.js"></script>
 
-<!-- GALLERY -->
-<section id="gallery" class="fade">
-<h2>Gallery</h2>
+<!-- PHOTO GALLERY -->
+
+<section id="gallery">
+  
+<h2>Photo Gallery</h2>
+
 <div class="gallery">
-<img src="https://source.unsplash.com/300x300/?classroom">
-<img src="https://source.unsplash.com/300x300/?computer">
-<img src="https://source.unsplash.com/300x300/?students">
-<img src="https://source.unsplash.com/300x300/?education">
-<img src="https://source.unsplash.com/300x300/?training">
-<img src="https://source.unsplash.com/300x300/?lab">
+
+<img src="photo1.jpg.jpg" onclick="openImg(this)">
+<img src="photo2.jpg.jpg" onclick="openImg(this)">
+<img src="photo3.jpg.jpg" onclick="openImg(this)">
+<img src="photo4.jpg.jpg" onclick="openImg(this)">
+
 </div>
+
 </section>
 
 <!-- MAP -->
