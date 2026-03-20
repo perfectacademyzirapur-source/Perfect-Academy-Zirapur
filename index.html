@@ -186,7 +186,27 @@ height: 140px;
 }
 }
   
+/* FIXED SMALL PHOTO GALLERY */
+#gallery .gallery {
+display: grid !important;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+gap: 12px;
+max-width: 800px;
+margin: auto;
+justify-items: center;
+}
 
+#gallery .gallery img {
+width: 180px !important;   /* FIX SIZE */
+height: 140px !important;
+object-fit: cover !important;
+border-radius: 10px;
+transition: 0.3s;
+}
+
+#gallery .gallery img:hover {
+transform: scale(1.05);
+}
 
 /* INPUT */
 input,textarea{
