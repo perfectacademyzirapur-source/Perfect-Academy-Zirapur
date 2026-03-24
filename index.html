@@ -11,19 +11,17 @@
 
 <style>
 
-.grid.video {
-display: flex !important;
-flex-wrap: nowrap !important;
+.video {
+display: flex;
+flex-wrap: wrap;   /* sab reels show hongi */
+justify-content: center;
 gap: 20px;
-overflow-x: auto;
 padding: 20px;
 }
 
-.grid.video blockquote.instagram-media {
-flex: 0 0 300px !important;
-max-width: 300px !important;
-min-width: 300px !important;
-margin: 0 !important;
+.video blockquote.instagram-media {
+width: 300px !important;
+margin: 10px !important;
 }
 
 .video {
@@ -486,6 +484,12 @@ if(top<window.innerHeight-100){
 el.classList.add("show");
 }
 });
+});
+
+window.addEventListener("load", () => {
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+  }
 });
 
 </script>
